@@ -1,6 +1,5 @@
 public class BoardItem {
 
-
     private int x;
     private int y;
     private Type team;
@@ -8,8 +7,7 @@ public class BoardItem {
     public BoardItem(int x, int y, String team) {
         this.x = x;
         this.y = y;
-        switch (team)
-        {
+        switch (team) {
             case "P1":
                 this.setTeam(Type.P1);
                 break;

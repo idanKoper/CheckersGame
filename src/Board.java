@@ -35,7 +35,7 @@ public class Board {
         gameMode = GameMode.CREATING; //Its Only for function if i will want to improve this project.
     }
 
-    public void printBoard(){
+    public void printBoard() {
         String letterToPrint;
         for (int y = 0; y < board.length; y++) {
             for (int x = 0; x < board.length; x++) {
@@ -45,8 +45,8 @@ public class Board {
                     letterToPrint = String.valueOf(letterConversion[x - 1]);
                 else if (x == 0)
                     letterToPrint = String.valueOf(y);
-                else letterToPrint = (getItemByXY(x,y).getTeam().toString());
-                System.out.print( letterToPrint + "\t");
+                else letterToPrint = (getItemByXY(x, y).getTeam().toString());
+                System.out.print(letterToPrint + "\t");
             }
             System.out.println();
         }
@@ -68,8 +68,6 @@ public class Board {
                 changeStatusForEatenItem(soldierInput, placeToMove);
                 break;
         }
-
-        //board[boardItem.getX()][boardItem.getY()].setTeam(boardItem.getTeam());
     }
 
     public boolean isValidTurn(BoardItem source, BoardItem dest) {
@@ -77,14 +75,18 @@ public class Board {
             if (source.getTeam() == Type.P1 && dest.getTeam() == Type.B && dest.getY() > source.getY() && dest.getY() <= 8) {
                 if (dest.getX() == (source.getX() + 1) && dest.getY() == (source.getY() + 1)) return true;    //P1-Right
                 if (dest.getX() == (source.getX() - 1) && dest.getY() == (source.getY() + 1)) return true;    //P1-Left
-                if (dest.getX() == (source.getX() - 2) && dest.getY() == (source.getY() + 2)) return true;    //P1-Eating Left
-                if (dest.getX() == (source.getX() + 2) && dest.getY() == (source.getY() + 2)) return true;    //P1-Eating Right
+                if (dest.getX() == (source.getX() - 2) && dest.getY() == (source.getY() + 2))
+                    return true;    //P1-Eating Left
+                if (dest.getX() == (source.getX() + 2) && dest.getY() == (source.getY() + 2))
+                    return true;    //P1-Eating Right
                 return false;
             } else if (source.getTeam() == Type.P2 && dest.getTeam() == Type.B && dest.getY() < source.getY() && dest.getY() >= 1) {
                 if (dest.getX() == (source.getX() - 1) && (dest.getY() + 1) == source.getY()) return true;    //P2-Left
                 if (dest.getX() == (source.getX() + 1) && (dest.getY() + 1) == source.getY()) return true;    //P2-Right
-                if (dest.getX() == (source.getX() - 2) && dest.getY() == (source.getY() - 2)) return true;    //P2-Eating Left
-                if (dest.getX() == (source.getX() + 2) && dest.getY() == (source.getY() - 2)) return true;    //P2-Eating Right
+                if (dest.getX() == (source.getX() - 2) && dest.getY() == (source.getY() - 2))
+                    return true;    //P2-Eating Left
+                if (dest.getX() == (source.getX() + 2) && dest.getY() == (source.getY() - 2))
+                    return true;    //P2-Eating Right
                 return false;
             }
         }
@@ -104,7 +106,7 @@ public class Board {
     }
 
 
-    public boolean cheackDoubleEating(BoardItem placeToMove) {
+    public boolean cheackDoubleEating(BoardItem placeToMove) {          //todo: Need to implement.
         return true;
     }
 
