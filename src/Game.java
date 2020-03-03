@@ -15,7 +15,15 @@ public class Game {
         String nameB = sc.nextLine();
         System.out.println("Let the game begin");
         board = new Board();
-        while (board.getScoreP1() != 0 || board.getScoreP2() != 0 || isFinish != true) {
+        while (board.getScoreP1() != 0 && board.getScoreP2() != 0 && isFinish != true) {
+            if (board.getScoreP1() == 0 ){
+                System.out.println("The game finished case " + nameB + "win!!!!!!");
+                System.exit(0);
+            }else{
+                System.out.println("The game finished case " + nameW + "win!!!!!!");
+                System.exit(0);
+            }
+
             System.out.println("Please enter your soldier that you want to move, write 'Q' if there isn't any legal move");
             String answerUser = sc.nextLine();
             if (answerUser.equals("Q")) {    //     I am assume that the user will enter 'Q' if he dont have any any legal move.

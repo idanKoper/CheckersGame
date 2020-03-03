@@ -63,9 +63,9 @@ public class Board {
                 soldierInput.setTeam((soldierInput.getX() + soldierInput.getY()) % 2 == 0 ? Type.W : Type.B);
                 break;
             case EATING:
+                changeStatusForEatenItem(soldierInput, placeToMove);
                 placeToMove.setTeam(soldierInput.getTeam());
                 soldierInput.setTeam((soldierInput.getX() + soldierInput.getY()) % 2 == 0 ? Type.W : Type.B);
-                changeStatusForEatenItem(soldierInput, placeToMove);
                 break;
         }
     }
@@ -114,24 +114,24 @@ public class Board {
         int eatenItemX = 0, eatenItemY = 0;
         if (soldierInput.getTeam() == Type.P1) {
             this.scoreP2--;
-            if (placeToMove.getX() == (soldierInput.getX() - 2) && placeToMove.getY() == (soldierInput.getY() + 2)) //The user P1 eaten left
+            if (placeToMove.getX() == (soldierInput.getX() - 2) && placeToMove.getY() == (soldierInput.getY() + 2)) //The user P1 ate left
             {
                 eatenItemX = soldierInput.getX() - 1;
                 eatenItemY = soldierInput.getY() + 1;
             }
-            if (placeToMove.getX() == (soldierInput.getX() + 2) && placeToMove.getY() == (soldierInput.getY() + 2)) //The user P1 eaten right
+            if (placeToMove.getX() == (soldierInput.getX() + 2) && placeToMove.getY() == (soldierInput.getY() + 2)) //The user P1 ate right
             {
                 eatenItemX = soldierInput.getX() + 1;
                 eatenItemY = soldierInput.getY() + 1;
             }
         } else {
             this.scoreP1--;
-            if (placeToMove.getX() == (soldierInput.getX() - 2) && placeToMove.getY() == (soldierInput.getY() - 2)) //The user P2 eaten left
+            if (placeToMove.getX() == (soldierInput.getX() - 2) && placeToMove.getY() == (soldierInput.getY() - 2)) //The user P2 ate left
             {
                 eatenItemX = soldierInput.getX() - 1;
                 eatenItemY = soldierInput.getY() - 1;
             }
-            if (placeToMove.getX() == (soldierInput.getX() + 2) && placeToMove.getY() == (soldierInput.getY() - 2)) //The user P2 eaten right
+            if (placeToMove.getX() == (soldierInput.getX() + 2) && placeToMove.getY() == (soldierInput.getY() - 2)) //The user P2 ate right
             {
                 eatenItemX = soldierInput.getX() + 1;
                 eatenItemY = soldierInput.getY() - 1;
