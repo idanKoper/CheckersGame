@@ -106,7 +106,7 @@ public class Board {
     }
 
 
-    public boolean cheackDoubleEating(BoardItem placeToMove) {          //todo: Need to implement.
+    public boolean cheackDoubleEating(BoardItem placeToMove) {          //todo: Need to implement as needed.
         return true;
     }
 

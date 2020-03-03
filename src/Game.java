@@ -4,7 +4,7 @@ public class Game {
 
     private boolean isFinish = false;
     private Board board;
-    private String turn = "W";
+    private String turn = "W"; //TODO: Need to implement Turn as needed
 
 
     public Game() {
