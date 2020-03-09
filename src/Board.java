@@ -6,6 +6,8 @@ public class Board {
     private Type turn;
     private GameMode gameMode;
 
+
+    //Assume that i dont have to handle incorrect input.
     public Board() {
         createBoard();
     }
@@ -121,7 +123,7 @@ public class Board {
             }
             if (placeToMove.getX() == (soldierInput.getX() + 2) && placeToMove.getY() == (soldierInput.getY() + 2)) //The user P1 ate right
             {
-                eatenItemX = soldierInput.getX() + 1;
+                eatenItemX = soldierInput.getX() + 1    ;
                 eatenItemY = soldierInput.getY() + 1;
             }
         } else {
